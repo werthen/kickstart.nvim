@@ -253,10 +253,22 @@ rtp:prepend(lazypath)
 --  To update plugins you can run
 --    :Lazy update
 --
+
+vim.keymap.set('n', '<leader>co', '<cmd>Copilot enable<CR>', { desc = 'Enable Copilot' })
+
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added via a link or github org/name. To run setup automatically, use `opts = {}`
   { 'NMAC427/guess-indent.nvim', opts = {} },
+  { 'github/copilot.vim' },
+  { 'edluffy/hologram.nvim' },
+  {
+    'greggh/claude-code.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim', -- Required for git operations
+    },
+    config = function() require('claude-code').setup() end,
+  },
 
   -- Alternatively, use `config = function() ... end` for full control over the configuration.
   -- If you prefer to call `setup` explicitly, use:
@@ -912,7 +924,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
-  require 'github/copilot.vim',
+  -- require 'github/copilot.vim',
 
   require 'kickstart.plugins.autopairs', -- Paired parentheses
 
