@@ -261,7 +261,6 @@ require('lazy').setup({
   -- NOTE: Plugins can be added via a link or github org/name. To run setup automatically, use `opts = {}`
   { 'NMAC427/guess-indent.nvim', opts = {} },
   { 'github/copilot.vim' },
-  { 'edluffy/hologram.nvim' },
   {
     '3rd/image.nvim',
     build = false, -- so that it doesn't build the rock https://github.com/3rd/image.nvim/issues/91#issuecomment-2453430239
