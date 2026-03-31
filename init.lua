@@ -168,9 +168,9 @@ rtp:prepend(lazypath)
 --    :Lazy update
 --
 
+-- Keymap to enable Copilot.
 vim.keymap.set('n', '<leader>co', '<cmd>Copilot enable<CR>', { desc = 'Enable Copilot' })
 
--- Hello, wo
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added via a link or github org/name. To run setup automatically, use `opts = {}`
@@ -328,7 +328,7 @@ require('lazy').setup({
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
-      -- it can fuzzy find! It's more than just a "file finder", it can search
+      -- it can fuzzy find! It's more than just a "file /finder", it can search
       -- many different aspects of Neovim, your workspace, LSP, and more!
       --
       -- The easiest way to use Telescope, is to start by doing something like:
@@ -780,7 +780,7 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'minispring'
     end,
   },
 
@@ -873,16 +873,15 @@ require('lazy').setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
-  -- require 'github/copilot.vim',
+  require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.lint',
 
   require 'kickstart.plugins.autopairs', -- Paired parentheses
 
   require 'kickstart.plugins.neo-tree', -- Tree view
   vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>'),
-  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommended keymaps
+  require 'kickstart.plugins.gitsigns', -- adds gitsigns recommended keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
