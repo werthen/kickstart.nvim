@@ -795,6 +795,15 @@ require('lazy').setup({
     opts = { signs = false },
   },
 
+  {
+    'numToStr/Comment.nvim',
+    event = 'VimEnter',
+    opts = {},
+    config = function()
+      vim.keymap.set('n', '<C-/>', function() require('Comment.api').toggle.linewise.current() end, { noremap = true, silent = true })
+    end,
+  },
+
   { -- Collection of various small independent plugins/modules
     'nvim-mini/mini.nvim',
     config = function()
